@@ -1,0 +1,33 @@
+globalcommon:
+  qa:
+    url: 'https://www.google.com/'
+    mdnapiurl: ''
+    dburl: ''
+
+google:
+  qa:
+    name: 'google'
+    client: 'google'
+    channel: 'google'
+    url: 'https://www.google.com/'
+  staging:
+    name: 'google'
+    client: 'google'
+amazon:
+  qa:
+    name: 'amazon'
+    client: 'amazon'
+    channel: 'amazon'
+    url: 'https://www.amazon.com/'
+  staging:
+    name: 'amazon'
+    client: 'amazon'
+facebook:
+  qa:
+    name: 'facebook'
+    client: 'facebook'
+    channel: 'facebook'
+    url: 'https://www.facebook.com/'
+  staging:
+    name: 'facebook'
+    client: 'facebook'
