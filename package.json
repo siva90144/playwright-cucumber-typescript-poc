@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This is UI Playwright cucumber in type script",
   "scripts": {
-    "pretest": "npx ts-node src/helper/report/init.ts ",
+    "pretest": "  npx playwright install && npx ts-node src/helper/report/init.ts ",
     "test": "cucumber-js --config ./cucumber.js || true "
     
   },

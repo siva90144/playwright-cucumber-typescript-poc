@@ -18,6 +18,21 @@ Feature: Search - Verify end to end flow
         @facebook
         Examples:
             | client   | pagetitle |
-            | facebook | Facebok  |
+            | facebook | Facebok   |
+
+    @actual @validate-e2e @login
+    Scenario Outline: Search - I am able to login in the web "<client>"
+        Given I login the application for "<client>"
+        When I get the page title
+        And I login the application with details
+            | userName   | password   |
+            | <userName> | <password> |
+        Then I verify details "<pagetitle>"
+        @facebook
+        Examples:
+            | client   | pagetitle | userName | password |
+            | facebook | Facebok   | test     | test     |
+
+
 
 

@@ -22,20 +22,42 @@ export default class LandingPage extends BasePage {
   private mobileNumberTxtBox = "//input[@name='mobileNumber']";
   private search = "//button[@type='submit']";
   private correlationId = 'getTabDetails().CorrelationId';
+  private username = '//input[@name="email"]';
+  private pass = '//input[@name="pass"]';
+  private login_fb = '//button[@name="login"]';
 
   async launchApplication(client: string) {
-    let clientName=process.env.npm_config_client || client;
+    let clientName = process.env.npm_config_client || client;
     await AppConfiguration.setClient(clientName);
     const baseUrl: string | undefined = await AppConfiguration.getBaseURL();
     await this.page.goto(baseUrl!);
   }
 
-  async getTitle(){
+  async getTitle() {
     //await expect(this.page.title)
-    const title= await this.page.title();
-    console.log('title is: '+title)
+    const title = await this.page.title();
+    console.log('title is: ' + title);
   }
-  async verifyTitle(title:string){
+  async verifyTitle(title: string) {
     expect(await this.page.title()).toContain(title);
+    console.log('verification');
+  }
+  async enterDetails(details: object) {
+    for (const [key, value] of Object.entries(details)) {
+      switch (key) {
+        case 'userName':
+          console.log('username is: ' + value);
+          await this.page.fill(this.username, value);
+          break;
+        case 'password':
+          console.log('pwd is: ' + value);
+          await this.page.fill(this.pass, value);
+          break;
+        default:
+        expect('invalid case found:'+key).toThrowError;
+      }
+    }
+    await this.page.click(this.login_fb);
+          console.log('login clicked');
   }
 }

@@ -1,10 +1,9 @@
-import { Given, Then, When, setDefaultTimeout } from '@cucumber/cucumber';
+import { DataTable, Given, Then, When, setDefaultTimeout } from '@cucumber/cucumber';
 import LandingPage from '../pages/LandingPage';
 import { getPage } from '../../hooks/hooks';
 import BasePage from '../pages/BasePage';
 import Util from '../../helper/util/Util';
 
-let basePage: BasePage;
 let landingPage: LandingPage;
 
 Given('I login the application for {string}', async function (client: string) {
@@ -19,5 +18,11 @@ When('I get the page title', async function () {
 });
 
 Then('I verify details {string}',async function (title:string) {
+  console.log('verify page title')
   await landingPage.verifyTitle(title)
+})
+When('I login the application with details',async function (details:DataTable) {
+  console.log('DataTable');
+  await landingPage.enterDetails(details.hashes()[0]);
+  
 })
