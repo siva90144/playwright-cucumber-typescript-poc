@@ -24,7 +24,8 @@ export default class LandingPage extends BasePage {
   private correlationId = 'getTabDetails().CorrelationId';
 
   async launchApplication(client: string) {
-    await AppConfiguration.setClient(client);
+    let clientName=process.env.npm_config_client || client;
+    await AppConfiguration.setClient(clientName);
     const baseUrl: string | undefined = await AppConfiguration.getBaseURL();
     await this.page.goto(baseUrl!);
   }

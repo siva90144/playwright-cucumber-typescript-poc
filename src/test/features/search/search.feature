@@ -1,9 +1,9 @@
-@pSearch @regression
+@Search @regression
 Feature: Search - Verify end to end flow
     I want to verify Search flow
 
     @actual @validate-e2e @search
-    Scenario Outline: Search - I am able to search in the web
+    Scenario Outline: Search - I am able to search in the web "<client>"
         Given I login the application for "<client>"
         When I get the page title
         Then I verify details "<pagetitle>"

@@ -1,7 +1,6 @@
 globalcommon:
   qa:
     url: 'https://www.google.com/'
-    mdnapiurl: ''
     dburl: ''
 
 google:

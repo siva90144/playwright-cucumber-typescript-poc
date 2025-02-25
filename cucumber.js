@@ -20,11 +20,8 @@ module.exports = {
             "ts-node/register"
         ],
         format: [
-            "progress-bar",
-            "summary",
-            "html:test-results/cucumber-report.html",
-            "json:test-results/cucumber-report.json",
-            "./report.js"
+            ['./report.js']
+            
         ],
         parallel: 1
     },

@@ -51,10 +51,6 @@ After(async function ({ pickle, result }) {
   }
   await page.close();
   await context.close();
-  // this.attach("MDN/Case Number: "+BasePage.responseData.get('MDN') +" / "+BasePage.responseData.get('Case Number') +" / "+BasePage.responseData.get('SJ ID'))
-  // console.log('Scenario execution completed for: '+pickle.name)
-  // console.log('MDN/Case Number: '+BasePage.responseData.get('MDN') +" / "+BasePage.responseData.get('Case Number') +" / "+BasePage.responseData.get('SJ ID'))
-  // console.log('correlation id: '+BasePage.responseData.get('CorrelationId')) 
 });
 
 AfterAll(async function () {
