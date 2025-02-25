@@ -2,7 +2,8 @@
 This is Playwright project with Cucumber and typescript
 
 to execute scenarios run below commands
+
 `npx playwright install --with-deps chromium`
 
-`npm run test --tags='@amazon'`
+`npm run test --tags='@login'`
 
