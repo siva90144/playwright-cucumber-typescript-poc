@@ -23,6 +23,6 @@ module.exports = {
             ['./report.js']
             
         ],
-        parallel: 1
+        parallel: 2
     },
 }

@@ -2,11 +2,12 @@ import { LaunchOptions, chromium, firefox, webkit } from "playwright-core";
 
 const options: LaunchOptions = {
     headless: false,
+   // proxy: { server: 'http://36.93.163.219:8080' }
     //channel: "chrome",
    // args:['--start-maximized'],   
 }
 export const invokeBrowser = () => {
-    const browserType = process.env.BROWSER || "chrome";
+    const browserType = process.env.BROWSER || "firefox";
     switch (browserType) {
         case "chrome":
             return chromium.launch(options);

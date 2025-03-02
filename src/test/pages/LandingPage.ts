@@ -32,7 +32,12 @@ export default class LandingPage extends BasePage {
     const baseUrl: string | undefined = await AppConfiguration.getBaseURL();
     await this.page.goto(baseUrl!);
   }
-
+  async launchApplicationWithURL(url:string,client: string) {
+    let clientName = process.env.npm_config_client || client;
+    await AppConfiguration.setClient(clientName);
+    await this.page.goto(url);
+    await this.page.waitForTimeout(3000);
+  }
   async getTitle() {
     //await expect(this.page.title)
     const title = await this.page.title();

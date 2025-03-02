@@ -11,6 +11,10 @@ Given('I login the application for {string}', async function (client: string) {
   await landingPage.launchApplication(client);
 });
 
+Given('I launch the application with {string} for {string}', async function (url:string,client: string) {
+  landingPage = new LandingPage(getPage());
+  await landingPage.launchApplicationWithURL(url,client);
+});
 
 
 When('I get the page title', async function () {
