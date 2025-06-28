@@ -9,8 +9,6 @@ import {
 import { Browser, BrowserContext, Page } from "@playwright/test";
 import { invokeBrowser } from "../helper/browsers/browserManager";
 import * as fs from "fs-extra";
-import BasePage from "../test/pages/BasePage";
-import path from 'path';
 setDefaultTimeout(1000 * 60 * 4);
 
 let browser: Browser;

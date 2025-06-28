@@ -1,8 +1,7 @@
 import { DataTable, Given, Then, When, setDefaultTimeout } from '@cucumber/cucumber';
 import LandingPage from '../pages/LandingPage';
 import { getPage } from '../../hooks/hooks';
-import BasePage from '../pages/BasePage';
-import Util from '../../helper/util/Util';
+
 
 let landingPage: LandingPage;
 
